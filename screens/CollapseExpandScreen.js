@@ -1,0 +1,52 @@
+import React, { Component } from 'react'
+
+import {
+  View,
+  Text,
+  StyleSheet
+} from 'react-native'
+
+class CollapseExpandScreen extends Component {
+
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Collapse Expand Screen',
+      headerStyle: {
+        backgroundColor: '#2980b9',
+        height: 60,
+      },
+      headerTitleStyle: {
+        color: 'white'
+      },
+      headerBackTitleStyle:{
+        color:'white'
+      }
+    }
+
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+      <Text onPress={()=>{this.props.navigation.goBack()}} style={styles.textButton}>SCREEN</Text>
+      </View>
+    )
+  }
+}
+
+export default CollapseExpandScreen;
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor:'#8e44ad'
+  },
+  textButton: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    padding: 15
+  }
+})
